@@ -10,10 +10,16 @@ const officialNames = data.map((country) => country.name.official);
 const imgSrc = data.map((countries) => countries.flags.png);
 const imgAlt = data.map((countries) => countries.flags.alt);
 
+const btn_change_flag = document.getElementById("btn_change_flag");
+
+btn_change_flag.addEventListener("click", () => {
+  img.src = imgSrc[Math.floor(Math.random() * data.length)];
+});
+
 const img_container = document.getElementById("imageContainer");
+
 const img = document.createElement("img");
 
 img.src = imgSrc[Math.floor(Math.random() * data.length)];
-img.alt = imgAlt[Math.floor(Math.random() * data.length)];
 
 img_container.appendChild(img);
