@@ -8,21 +8,22 @@
     <script type="module" async src="./scripts/main.js"></script>
   </head>
 
-  <body class="w-screen h-screen bg-red-500">
-    <section class="w-full bg-black p-10 flex justify-center">
+  <body class="w-full h-full bg-red-500">
+    <section class="w-full bg-black p-20 flex justify-center">
       <div class="text-3xl text-red-500">WELCOME TO THE FLAG GAME!!</div>
     </section>
 
     <section
-      class="w-full h-screen bg-white flex p-5 flex-col items-center justify-center"
+      class="w-full h-full bg-white flex p-5 flex-col items-center justify-center"
     >
       <div
         id="imageContainer"
-        class="w-auto h-auto flex justify-center object-fit border-2"
+        class="w-auto h-80 flex justify-center object-fit shadow-xl"
       ></div>
+      <div id="buttonContainer" class="flex-col p-5"></div>
       <button
         id="btn_change_flag"
-        class="text-3lg font-bold m-20 py-2 px-4 border-2 rounded-lg"
+        class="text-3lg font-bold py-2 px-4 border-2 rounded-lg"
       >
         Change flag
       </button>
