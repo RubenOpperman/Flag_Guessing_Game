@@ -6,15 +6,22 @@ export function generateFourAnswers(
   btn_change_flag,
 ) {
   const countryList = [];
+
   const correctCountry = Country;
   const countriesList = allCountries;
 
-  for (let i = 0; i < 3; i++) {
-    countryList.push(
-      countriesList[Math.floor(Math.random() * countriesList.length)],
-    );
-  }
   countryList.push(correctCountry);
+  for (let i = 0; i < 3; i++) {}
+
+  while (countryList.length < 4) {
+    const countryAdd =
+      countriesList[Math.floor(Math.random() * countriesList.length)];
+
+    if (!countryList.includes(countryAdd)) {
+      countryList.push(countryAdd);
+    }
+  }
+
   shuffle(countryList);
 
   countryList.map((country) => {
