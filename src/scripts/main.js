@@ -4,8 +4,17 @@ import { generateFourAnswers } from "./answers.js";
 const data = await fetchData(
   "https://restcountries.com/v3.1/all?fields=name,capital,currencies,flags",
 );
-
-const score = 0;
+let score = 0;
+const scoreDisplay = document.getElementById("Score_Container");
+scoreDisplay.innerText = score;
+function updateScore(points) {
+  if (points == 0) {
+    score = 0;
+  } else {
+    score += points;
+  }
+  scoreDisplay.innerText = score;
+}
 
 const btn_container = document.getElementById("buttonContainer");
 
@@ -32,7 +41,13 @@ btn_change_flag.addEventListener("click", () => {
   btn_change_flag.classList.add("hidden");
   img.src = CountryImgSrc;
 
-  generateFourAnswers(Country, Countries, btn_container, btn_change_flag);
+  generateFourAnswers(
+    Country,
+    Countries,
+    btn_container,
+    btn_change_flag,
+    updateScore,
+  );
 });
 
 // create img container and load img
@@ -43,4 +58,10 @@ img.alt = CountryImgAlt;
 
 img_container.appendChild(img);
 
-generateFourAnswers(Country, Countries, btn_container, btn_change_flag);
+generateFourAnswers(
+  Country,
+  Countries,
+  btn_container,
+  btn_change_flag,
+  updateScore,
+);

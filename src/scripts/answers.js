@@ -4,6 +4,7 @@ export function generateFourAnswers(
   allCountries,
   btn_container,
   btn_change_flag,
+  updateScore,
 ) {
   const countryList = [];
 
@@ -26,16 +27,22 @@ export function generateFourAnswers(
 
   countryList.map((country) => {
     const btn = document.createElement("button");
+
     btn.addEventListener("click", (e) => {
-      const guess = correctCountry;
+      const guess = e.target.textContent;
+
       btn_change_flag.classList.remove("hidden");
 
-      if (guess == country) {
+      if (guess == correctCountry.name.common) {
         console.log("correct");
+        updateScore(1);
 
         e.target.style.backgroundColor = "green";
-      } else {
+      }
+      if (guess != correctCountry.name.common) {
         console.log("wrong");
+        updateScore(0);
+
         e.target.style.backgroundColor = "red";
       }
     });
