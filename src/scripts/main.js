@@ -1,18 +1,37 @@
 import { fetchData } from "./api.js";
 import { generateFourAnswers } from "./answers.js";
+import Storage from "./storage.js";
 //fetch data from api
 const data = await fetchData(
   "https://restcountries.com/v3.1/all?fields=name,capital,currencies,flags",
 );
+
 let score = 0;
+let highScore = 0;
+
+if (Storage.get("highScore")) {
+  highScore = Storage.get("highScore");
+} else {
+  highScore = 0;
+}
+
 const scoreDisplay = document.getElementById("Score_Container");
 scoreDisplay.innerText = score;
+const highScoreDisplay = document.getElementById("High_Score_Container");
+highScoreDisplay.innerText = highScore;
+
 function updateScore(points) {
   if (points == 0) {
     score = 0;
   } else {
     score += points;
   }
+
+  if (highScore < score) {
+    highScore = score;
+    Storage.save("highScore", highScore);
+  }
+  highScoreDisplay.innerText = highScore;
   scoreDisplay.innerText = score;
 }
 
