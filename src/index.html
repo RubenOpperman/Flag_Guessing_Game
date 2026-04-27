@@ -8,21 +8,23 @@
     <script type="module" async src="./scripts/main.js"></script>
   </head>
 
-  <body class="w-full h-full bg-red-500">
-    <section class="w-full bg-black p-10 flex justify-evenly">
-      <div class="text-3xl text-red-500">
-        <p>High Score:</p>
-        <p id="High_Score_Container"></p>
+  <body
+    class="w-full bg-[url('../images/Whole_world_-_land_and_oceans.jpg')] bg-cover bg-top bg-bottom bg-center bg-fixed"
+  >
+    <section class="w-full bg-[#0F172A] text-[#38BDF8] p-5 flex justify-evenly">
+      <div class="text-3xl flex gap-2">
+        <p class="text-[#F8FAFC]">High Score :</p>
+        <p class="text-[red]" id="High_Score_Container"></p>
       </div>
-      <div class="text-3xl text-red-500">WELCOME TO THE FLAG GAME!!</div>
-      <div id="score_container" class="text-3xl flex text-red-500">
-        <p>Score:</p>
-        <p id="Score_Container"></p>
+      <div class="text-3xl">WELCOME TO THE FLAG GAME!!</div>
+      <div id="score_container" class="text-3xl gap-2 flex">
+        <p class="text-[#F8FAFC]">Score :</p>
+        <p class="text-green-400" id="Score_Container"></p>
       </div>
     </section>
 
     <section
-      class="mx-auto w-[30%] h-full my-5 bg-white flex p-5 flex-col items-center justify-center shadow-3xl rounded-xl"
+      class="mx-auto w-[30%] h-full my-5 bg-[#1E293B] flex p-5 flex-col items-center justify-center shadow-3xl rounded-xl"
     >
       <div
         id="imageContainer"
@@ -31,9 +33,9 @@
       <div id="buttonContainer" class="flex-col p-5"></div>
       <button
         id="btn_change_flag"
-        class="text-3lg font-bold py-2 px-4 border-2 rounded-lg hidden"
+        class="text-lg text-[#0F172A] font-bold py-2 px-4 border-2 block rounded-lg hidden bg-[#38BDF8] hover:bg-[#0EA5E9] text-bold"
       >
-        Change flag
+        Next Flag
       </button>
     </section>
   </body>

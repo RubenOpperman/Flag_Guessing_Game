@@ -37,26 +37,31 @@ export function generateFourAnswers(
         console.log("correct");
         updateScore(1);
 
-        e.target.style.backgroundColor = "green";
+        e.target.style.backgroundColor = "#22C55E";
       }
       if (guess != correctCountry.name.common) {
         console.log("wrong");
         updateScore(0);
 
-        e.target.style.backgroundColor = "red";
+        e.target.style.backgroundColor = "#EF4444";
       }
     });
 
     btn.textContent = country.name.common;
     btn.classList.add(
-      "px-2",
-      "py-1",
-      "border-1",
-      "rounded-sm",
+      "px-3",
+      "py-2",
+      "border-2",
+      "rounded-md",
       "flex",
       "w-50",
       "justify-center",
-      "mb-5",
+      "mb-3",
+      "bg-[#334155]",
+      "text-[#F8FAFC]",
+      "hover:text-[#0F172A]",
+      "hover:bg-[#38BDF8]",
+      "font-bold",
     );
     btn.id = "button";
     btn_container.appendChild(btn);
